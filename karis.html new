@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ctivo Karis - Digital Creator</title>
+    <meta name="description" content="Ctivo Karis - Digital Creator, content Developer, and Social Media Influencer. Connect with me on social platforms.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2D1B4E, #1A0B2E, #3D2A5C);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6B46C1, #9333EA);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgb(0, 0, 0);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            animation: profileGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes profileGlow {
+            0% { box-shadow: 0 0 20px rgba(107, 70, 193, 0.5); }
+            100% { box-shadow: 0 0 30px rgba(79, 3, 150, 0.8); }
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #A855F7, #EC4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bio {
+            color: #E5E7EB;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .social-button {
+            padding: 1rem;
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateX(-100px);
+            animation: slideInFromRight 0.8s ease forwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .social-button:hover::before {
+            left: 100%;
+        }
+
+        .social-button:hover {
+            transform: translateX(10px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Staggered animation delays */
+        .social-button:nth-child(1) { animation-delay: 0.3s; }
+        .social-button:nth-child(2) { animation-delay: 0.5s; }
+        .social-button:nth-child(3) { animation-delay: 0.7s; }
+        .social-button:nth-child(4) { animation-delay: 0.9s; }
+        .social-button:nth-child(5) { animation-delay: 1.1s; }
+        .social-button:nth-child(6) { animation-delay: 1.5s; }
+
+        @keyframes slideInFromLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Alternating slide directions for variety */
+        .social-button:nth-child(even) {
+            transform: translateX(100px);
+            animation: slideInFromRight 0.8s ease forwards;
+        }
+
+        @keyframes slideInFromRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .facebook { 
+            background: linear-gradient(135deg, #1877F2, #0B5AD6);
+        }
+        .instagram { 
+            background: linear-gradient(45deg, #833AB4, #FD1D1D, #F77737);
+        }
+        .whatsapp { 
+            background: linear-gradient(135deg, #25D366, #1BA94C);
+        }
+        .snapchat { 
+            background: linear-gradient(135deg, #fffc00, #FDD835);
+            color: rgb(0, 0, 0);
+        }
+        .github { 
+            background: linear-gradient(135deg, #24292e, #1B1F23);
+        }
+        .telegram { 
+            background: linear-gradient(135deg, #0088cc, #006699);
+        }
+
+        /* Floating animation for icons */
+        .social-button i {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @media (max-width: 480px) {
+            .container { 
+                padding: 1rem;
+                margin: 1rem;
+            }
+            h1 { font-size: 1.5rem; }
+            .social-button { 
+                padding: 0.8rem;
+                font-size: 0.9rem;
+            }
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Pulse effect on page load */
+        .container {
+            animation: containerPulse 1s ease-out;
+        }
+
+        @keyframes containerPulse {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <div class="profile-pic" aria-label="Profile picture">CK</div>
+            <h1>Ctivo Karis</h1>
+            <p class="bio">Digital Creator | web Developer | Social Media Influencer</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.snapchat.com/add/ctivo_karis3140?share_id=wSnQCM6NNd4&locale=en-US" class="social-button snapchat">
+                <i class="fab fa-snapchat-ghost"></i> Snapchat
+            </a>
+            <a href="https://web.facebook.com/ecoflow.354" class="social-button facebook">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/ctivo_karis3140/" class="social-button instagram">
+                <i class="fab fa-instagram"></i> Instagram 
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=254736876204&text=" class="social-button whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://github.com/CTIVO" class="social-button github">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://t.me/CTIVOKARIS" class="social-button telegram">
+                <i class="fab fa-telegram-plane"></i> Telegram @CTIVOKARIS
+            </a>
+        </div>
+    </div>
+</body>
+</html>
